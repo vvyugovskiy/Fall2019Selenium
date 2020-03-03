@@ -14,7 +14,7 @@ public class QuitVsClose {
 
         driver.get("http://practice.cybertekschool.com/open_new_tab");
 
-        Thread.sleep(4000);
+        Thread.sleep(5000);
 
         driver.close(); // closes the current tab
         // driver.quit(); // closes entire browser
