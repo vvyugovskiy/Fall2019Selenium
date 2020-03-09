@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FindElementByName {
+public class LocatorsPracticeName {
 
     public static void main(String[] args) {
 

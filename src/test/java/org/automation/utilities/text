@@ -1,0 +1,12 @@
+Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
+
+//button[@class='btn btn-primary']   or  //*[@class='btn btn-primary']
+//button[@onclick='button4()']
+//button[@id='btnbtn_button']
+//button[text()='Button 4']
+//tag[@attribute='value']
+//button[starts-with(@id,'button_')] -- to match beginning of attribute
+//tag[starts-with(@attribute,'button_')]
+
+
+

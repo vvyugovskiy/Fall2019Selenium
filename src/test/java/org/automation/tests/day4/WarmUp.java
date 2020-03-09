@@ -16,6 +16,7 @@ public class WarmUp {
 
     public static void main(String[] args) throws Exception {
 
+        System.out.println("OS Running = " + System.getProperty("os.name"));
 //        Go to ebay
 //        enter search term
 //        click on search button
@@ -35,7 +36,7 @@ public class WarmUp {
 
 //        ebayTest();
 //        amazonTest();
-        wikiTest();
+//        wikiTest();
 
         Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
 
