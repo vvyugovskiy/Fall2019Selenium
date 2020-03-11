@@ -65,9 +65,11 @@ public class SeleniumOH1_2020_03_03 {
             class - classname
             name
             tag - every element will have a tag
+
             will only work with the link
             linkText
             partialLinkText
+
             locator that is using html (syntax)
             css
             xpath
@@ -104,6 +106,10 @@ public class SeleniumOH1_2020_03_03 {
 
         driver.get("http://etsy.com");
         WebElement searchBar = driver.findElement(By.id("global-enhancements-search-query"));
+        searchBar.sendKeys("Sheer bra");
+        //searchBar.click();   // don't work
+        WebElement clickSearch = driver.findElement(By.className("wt-input-btn-group__btn"));
+        clickSearch.click();
 
         // findElement() -> returns WebElement
         // as param we put By.locator("value of attribute")

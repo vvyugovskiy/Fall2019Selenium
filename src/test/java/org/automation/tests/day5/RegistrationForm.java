@@ -35,13 +35,13 @@ public class RegistrationForm {
 
         String expected = "Well done!";
         String actual = driver.findElement(By.tagName("h4")).getText();
-        if (expected.equals(expected)) {
+        if (expected.equals(actual)) {
             System.out.println("PASSED");
         } else {
             System.out.println("FAILED");
         }
         BrowserUtils.wait(3);
-//        driver.quit();
+        driver.quit();
 
 
         Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");

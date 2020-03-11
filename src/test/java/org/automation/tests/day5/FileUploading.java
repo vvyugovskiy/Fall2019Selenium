@@ -19,9 +19,11 @@ public class FileUploading {
 
         //https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
         //I am gonna upload pom.xml file
-        String filePath = System.getProperty("user.dir")+"/pom.xml"; // returns a way for current project
-        System.out.println(filePath);
-        upload.sendKeys(filePath);
+        // String filePath = System.getProperty("user.dir")+"/pom.xml"; // returns a way for current project
+        String filePath2 = "E:/Cashback (Sean Ellis) [2006].jpg";
+
+        System.out.println(filePath2);
+        upload.sendKeys(filePath2);
         driver.findElement(By.id("file-submit")).click();  // click to upload
         BrowserUtils.wait(2);
 
