@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class SeleniumOH2_2020_03_04 {
+public class OH_2020_03_04_Selenium {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 

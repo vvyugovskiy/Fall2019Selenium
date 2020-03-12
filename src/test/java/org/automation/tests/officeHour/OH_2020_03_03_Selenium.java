@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class SeleniumOH1_2020_03_03 {
+public class OH_2020_03_03_Selenium {
     /*
         - Iterator
             - List, Set, Map, and other types of collections can use Iterator class to iterate over that collection
