@@ -13,6 +13,7 @@ public class Xpath {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
         BrowserUtils.wait(2);
+
         // value can be inside ' ' or ""
         // if you don't know the tag name. or want to skip tag name, use*
         // for example //*[@onclick='button1()'] * means any tag name

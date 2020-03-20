@@ -1,6 +1,5 @@
 package org.automation.utilities;
 
-import java.io.IOException;
 
 public class BrowserUtils {
 

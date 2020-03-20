@@ -23,12 +23,6 @@ public class SelectByIndex {
         // select last option
         stateSelect.selectByIndex(stateSelect.getOptions().size()-1);
 
-
-
-
-
-
-
         BrowserUtils.wait(2);
         driver.quit();
 

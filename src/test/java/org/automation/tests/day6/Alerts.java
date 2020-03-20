@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Alerts {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
@@ -81,5 +81,8 @@ public class Alerts {
 
         BrowserUtils.wait(2);
         driver.quit();
+
+        Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
+
     }
 }

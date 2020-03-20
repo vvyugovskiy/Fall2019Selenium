@@ -12,12 +12,15 @@ import java.util.List;
 
 public class SelectByTextMultipleOptions {
     public static void main(String[] args) throws Exception {
+
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
         BrowserUtils.wait(2);
-        Select languagesSelect = new Select(driver.findElement(By.name("Languages")));
+
+         Select languagesSelect = new Select(driver.findElement(By.name("Languages")));
         // whether this select element support selecting multiple options at the same time ?
         // this is done by checking the value of the multiple attribute
+
         boolean isMultiple = languagesSelect.isMultiple();
         System.out.println(isMultiple);  // ->> True if you can select more than one option
 
@@ -39,8 +42,6 @@ public class SelectByTextMultipleOptions {
         BrowserUtils.wait(2);
 
         languagesSelect.deselectAll();
-
-
 
         BrowserUtils.wait(2);
         driver.quit();

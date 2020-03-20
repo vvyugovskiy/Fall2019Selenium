@@ -22,11 +22,10 @@ public class SelectByValue {
         String expected = "District Of Columbia";
         String actual = stateSelect.getFirstSelectedOption().getText();
         if (expected.equalsIgnoreCase(actual)){
-            System.out.println("PASS");
+            System.out.println("YEST PASSED");
         }else{
-            System.out.println("FAIL");
+            System.out.println("TEST FAILED");
         }
-
 
         BrowserUtils.wait(2);
         driver.quit();
