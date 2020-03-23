@@ -8,6 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class JSExecutor2 {
 
     private WebDriver driver;
@@ -27,7 +29,7 @@ public class JSExecutor2 {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         // after "" you can list webElements that will be used
         // as part of your javascript code
-        // it's varargs, so ypu can list 0+
+        // it's varargs, so you can list 0+
         // arguments - listed after,
         // use index to get specific webElement
         // WebElement arguments = {element, link, link2};
@@ -67,7 +69,6 @@ public class JSExecutor2 {
         Assert.assertEquals(subheader, expected);
     }
 
-
     @Test
     public void scrollToElement() {
         //href = link, URL
@@ -105,8 +106,10 @@ public class JSExecutor2 {
 
 
     @AfterMethod
-    public void teardown() {
+    public void teardown() throws IOException {
         BrowserUtils.wait(2);
         driver.quit();
+        Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
+
     }
 }
