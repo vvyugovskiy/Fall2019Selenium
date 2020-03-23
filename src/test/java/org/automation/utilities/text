@@ -7,6 +7,28 @@ Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
 //tag[@attribute='value']
 //button[starts-with(@id,'button_')] -- to match beginning of attribute
 //tag[starts-with(@attribute,'button_')]
+----------------------------------------------------------------------------------------
+//table[1]//tbody//tr       ==>> List
+//table[1]//th          ==>> List
+//table[1]//tbody//tr//td[5]      ==>> List
+//table[1]//td[text()='jdoe@hotmail.com']//following-sibling::td/a[text()='delete']
 
+//table[1] - get the first table on the page
+
+//table[1]//tr - get all rows from first table
+
+//table[1]//tbody//tr - get all rows from the first table, excluding table header
+
+//table//tbody//td[1] - get first column
+
+//table//tbody//tr[1] - get first row
+
+//table//tbody//tr[2]//td[1] - get data from second row, first column
+
+//table//th - get all column names
+
+//table//tbody//td[last()] - get last column
+---------------------------------------------------------------------------------------
+driver.manage().timeouts().implicitlyWait(time, time units)
 
 

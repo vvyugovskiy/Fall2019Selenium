@@ -1,15 +1,12 @@
-package org.automation.tests.day9;
+package org.automation.tests.day10;
 
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.automation.utilities.BrowserUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

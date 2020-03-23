@@ -1,4 +1,4 @@
-package org.automation.tests.day9;
+package org.automation.tests.day10;
 
 import org.automation.utilities.BrowserUtils;
 import org.automation.utilities.DriverFactory;

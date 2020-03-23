@@ -18,13 +18,13 @@ public class OH_2020_03_19_Akbar_2 {
         // is Map Iterable (does Map interface extend Iterable, Collection interface) : NO!!!
         // anything not iterable we can not use foreach loop
 
-        Map<String,String > nameStatePair = new HashMap<>(); // LinkedHashMap for keeping insertion order
+        Map<String,String> nameStatePair = new HashMap<>(); // LinkedHashMap for keeping insertion order
         nameStatePair.put("Faitih","FL");
-        nameStatePair.put("Faith", "Fl");
-        nameStatePair.put("Vlad", "SC");
-        nameStatePair.put("Hasan", "NY");
-        nameStatePair.put("Abdullo", "NY");
-        nameStatePair.put("Atakan", "GA");
+        nameStatePair.put("Zhibeckchach","IL");
+        nameStatePair.put("Vlad","SC");
+        nameStatePair.put("Hasan","NY");
+        nameStatePair.put("Omer","TX");
+        nameStatePair.put("Atakan","GA");
 
         System.out.println("nameStatePair = " + nameStatePair);
 
