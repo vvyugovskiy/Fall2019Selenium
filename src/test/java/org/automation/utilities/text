@@ -30,5 +30,18 @@ Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
 //table//tbody//td[last()] - get last column
 ---------------------------------------------------------------------------------------
 driver.manage().timeouts().implicitlyWait(time, time units)
+---------------------------------------------------------------------------------------
+WebDriverWait wait = new WebDriverWait(driver,15);
+wait.until(ExpectedConditions.titleContains("Google"));
+wait.until(ExpectedConditions.visibilityOf(username)).sendKeys("tomsmith");
+wait.until(ExpectedConditions.elementToBeClickable(submitBtn)).click();
 
+wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loadingoverlay")));
+wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
+----------------------------------------------------------------------------------------
+Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class)
+                .ignoring(ElementClickInterceptedException.class);
+
+//button[text()='Submit']
 
