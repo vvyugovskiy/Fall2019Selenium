@@ -1,8 +1,7 @@
-package org.automation.tests.day11;
+package org.automation.tests.day11_jsExecutor_webTables;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.automation.utilities.BrowserUtils;
-import org.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,4 +1,4 @@
-package org.automation.tests.day12;
+package org.automation.tests.day12_wait_webOrders;
 
 import org.automation.utilities.BrowserUtils;
 import org.automation.utilities.DriverFactory;
@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.function.Function;
 
 public class FluentWaitTest {
 

@@ -1,4 +1,4 @@
-package org.automation.tests.day12;
+package org.automation.tests.day12_wait_webOrders;
 
 import org.automation.utilities.BrowserUtils;
 import org.automation.utilities.DriverFactory;

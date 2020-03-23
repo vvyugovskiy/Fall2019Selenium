@@ -65,7 +65,7 @@ public class OH_2020_03_17_Selenium {
         WebElement city = driver.findElement(By.name("oro_contact_form[addresses][0][city]"));
         WebElement state = driver.findElement(By.name("oro_contact_form[addresses][0][region_text]"));
         WebElement zipcode = driver.findElement(By.name("oro_contact_form[addresses][0][postalCode]"));
-        WebElement salesGroup = driver.findElement(By.cssSelector("[id*='oro_contact_form_groups_1-uid']"));
+        WebElement salesGroup = driver.findElement(By.xpath("(//input[starts-with(@id,'oro_contact_form_groups_')])[1]"));
 
 
         first_name.sendKeys(contact1.get("First Name"));
@@ -77,27 +77,25 @@ public class OH_2020_03_17_Selenium {
             to create Select class we are using webelement of <select></select> element from html (we need to locate our
             dropdown which should have select tag)
          */
-        Select country_dropdwn = new Select(country); //this is special class in selenium to handle dropdowns
-        /*
-        it has different methods that help us interact with dropdown
-         */
-        country_dropdwn.selectByVisibleText(contact1.get("Country"));
+
         street.sendKeys(contact1.get("Street"));
         city.sendKeys(contact1.get("City"));
         state.sendKeys(contact1.get("State"));
         zipcode.sendKeys(contact1.get("Zip Code"));
-        //salesGroup.sendKeys(contact1.get("Sales Group"));
 
         if (contact1.get("Sales Group").equalsIgnoreCase("true")){
             salesGroup.click();
         }
 
+        Select country_dropdwn = new Select(country); //this is special class in selenium to handle dropdowns
+        /*
+        it has different methods that help us interact with dropdown
+         */
+        country_dropdwn.selectByVisibleText(contact1.get("Country"));
+
         BrowserUtils.wait(2);
 
-        Select save = new Select(driver.findElement(By.className("btn btn-success action-button")));
-        save.selectByVisibleText("Save and Close");
-
-        WebElement saveAndClose = driver.findElement(By.xpath("//*[@class='btn btn-success action-buttotains(text(),'Save and Close')]"));
+        WebElement saveAndClose = driver.findElement(By.xpath("//button[@class='btn btn-success action-button' and contains(text(),'Save and Close')]"));
         saveAndClose.click();
 
         BrowserUtils.wait(3);

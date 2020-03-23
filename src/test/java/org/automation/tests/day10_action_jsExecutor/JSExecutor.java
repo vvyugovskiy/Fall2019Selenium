@@ -1,4 +1,4 @@
-package org.automation.tests.day10;
+package org.automation.tests.day10_action_jsExecutor;
 
 
 

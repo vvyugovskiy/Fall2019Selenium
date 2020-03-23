@@ -1,4 +1,4 @@
-package org.automation.tests.day11;
+package org.automation.tests.day11_jsExecutor_webTables;
 
 import org.automation.utilities.BrowserUtils;
 import org.automation.utilities.DriverFactory;
@@ -18,6 +18,32 @@ public class JSExecutor2 {
         driver.get("http://practice.cybertekschool.com/");
         driver.manage().window().maximize();
     }
+
+    @Test
+    public void clickTest() {
+        WebElement link = driver.findElement(By.linkText("Multiple Buttons"));
+//      disable this click action, to perform it with js executor
+//      link.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        // after "" you can list webElements that will be used
+        // as part of your javascript code
+        // it's varargs, so ypu can list 0+
+        // arguments - listed after,
+        // use index to get specific webElement
+        // WebElement arguments = {element, link, link2};
+        // from left - to right
+        js.executeScript("arguments[0].click()", link);
+
+        WebElement button6 = driver.findElement(By.id("disappearing_button"));
+
+        js.executeScript("arguments[0].click()", button6);
+
+        WebElement result = driver.findElement(By.id("result"));
+
+        Assert.assertEquals(result.getText(), "Now it's gone!");
+
+    }
+
     @Test
     public void textInputTest() {
         driver.findElement(By.linkText("Form Authentication")).click();
@@ -75,31 +101,6 @@ public class JSExecutor2 {
         String actual = js.executeScript("return document.title").toString();
 
         Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    public void clickTest() {
-        WebElement link = driver.findElement(By.linkText("Multiple Buttons"));
-//      disable this click action, to perform it with js executor
-//      link.click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        // after "" you can list webElements that will be used
-        // as part of your javascript code
-        // it's varargs, so ypu can list 0+
-        // arguments - listed after,
-        // use index to get specific webElement
-        // WebElement arguments = {element, link, link2};
-        // from left - to right
-        js.executeScript("arguments[0].click()", link);
-
-        WebElement button6 = driver.findElement(By.id("disappearing_button"));
-
-        js.executeScript("arguments[0].click()", button6);
-
-        WebElement result = driver.findElement(By.id("result"));
-
-        Assert.assertEquals(result.getText(), "Now it's gone!");
-
     }
 
 

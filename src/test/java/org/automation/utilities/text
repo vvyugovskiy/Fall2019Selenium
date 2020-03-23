@@ -44,4 +44,6 @@ Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(1
                 .ignoring(ElementClickInterceptedException.class);
 
 //button[text()='Submit']
+---------------------------------------------------------------------------------------------
+//td[text()='Steve Johns']//following-sibling::td[7]
 
