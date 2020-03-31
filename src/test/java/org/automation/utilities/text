@@ -1,5 +1,31 @@
 Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
 
+//input[@type='submit' and @name='btnLogin']
+//*[@type='submit' or @name='btnReset']
+//*[contains(text(),'here')]
+//*[contains(@id,'message')]
+//span[@class='a-price']//span[@class='a-offscreen']
+//span[text()='Qty:']/following-sibling::span
+
+//span[@class='title title-level-1' and contains(text(),'Fleet')]  ==>> vytrack
+//span[@class='title title-level-2' and text()='Vehicles']
+
+private By itemNameBy = By.xpath("//div[@class='a-section a-spacing-medium']//span[@class='a-size-base-plus a-color-base a-text-normal']");
+span[class='a-price'] > [class='a-offscreen'] ==> Amazon
+
+#user-menu > a     ->> next child with a tag
+.select2-chosen     ->> looking for element with this class value
+@FindBy (css = "[id^='time_selector_oro_calendar_event_form_start']")  +>>> Starts with
+@FindBy(css = "[title='Create Calendar event']")            +>>> Starts with
+
+@FindBy(id = "prependedInput2")
+@FindBy(css = "[class='alert alert-error']")
+@FindBy(linkText = "Forgot your password?")
+
+java.util.GregorianCalendar.isLeapYear()  ==> leap year
+
+
+
 //button[@class='btn btn-primary']   or  //*[@class='btn btn-primary']
 //button[@onclick='button4()']
 //button[@id='btnbtn_button']
