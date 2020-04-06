@@ -1,0 +1,86 @@
+Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
+
+//*[@id='FirstName']/following::input[@type='text']
+//*[@id='LastName']//preceding::input[@type='text']"
+//input[@type='submit' and @name='btnLogin']
+//*[@type='submit' or @name='btnReset']
+//*[contains(text(),'here')]
+//*[contains(@id,'message')]
+//span[@class='a-price']//span[@class='a-offscreen']
+//span[text()='Qty:']/following-sibling::span
+
+//span[@class='title title-level-1' and contains(text(),'Fleet')]  ==>> vytrack
+//span[@class='title title-level-2' and text()='Vehicles']
+
+private By itemNameBy = By.xpath("//div[@class='a-section a-spacing-medium']//span[@class='a-size-base-plus a-color-base a-text-normal']");
+span[class='a-price'] > [class='a-offscreen'] ==> Amazon
+//*[@id='brandsRefinements']//input[@type='checkbox'] ==> Brand checkboxes
+
+#mceu_101 > iframe
+//*[text()='Description']/../following-sibling::div//iframe =>
+iframe[id^='oro_calendar_event_form_description-uid'] => for iframe on vytrack event page!
+//div[contains(text(),'Calendar event saved')]
+
+
+a[title='Create Calendar event']
+
+#user-menu > a     ->> next child with a tag
+.select2-chosen     ->> looking for element with this class value
+@FindBy (css = "[id^='time_selector_oro_calendar_event_form_start']")  +>>> Starts with
+@FindBy(css = "[title='Create Calendar event']")            +>>> Starts with
+
+@FindBy(id = "prependedInput2")
+@FindBy(css = "[class='alert alert-error']")
+@FindBy(linkText = "Forgot your password?")
+
+java.util.GregorianCalendar.isLeapYear()  ==> leap year
+
+
+
+//button[@class='btn btn-primary']   or  //*[@class='btn btn-primary']
+//button[@onclick='button4()']
+//button[@id='btnbtn_button']
+//button[text()='Button 4']
+//tag[@attribute='value']
+//button[starts-with(@id,'button_')] -- to match beginning of attribute
+//tag[starts-with(@attribute,'button_')]
+----------------------------------------------------------------------------------------
+//table[1]//tbody//tr       ==>> List
+//table[1]//th          ==>> List
+//table[1]//tbody//tr//td[5]      ==>> List
+//table[1]//td[text()='jdoe@hotmail.com']//following-sibling::td/a[text()='delete']
+
+//table[1] - get the first table on the page
+
+//table[1]//tr - get all rows from first table
+
+//table[1]//tbody//tr - get all rows from the first table, excluding table header
+
+//table//tbody//td[1] - get first column
+
+//table//tbody//tr[1] - get first row
+
+//table//tbody//tr[2]//td[1] - get data from second row, first column
+
+//table//th - get all column names
+
+//table//tbody//td[last()] - get last column
+---------------------------------------------------------------------------------------
+driver.manage().timeouts().implicitlyWait(time, time units)
+---------------------------------------------------------------------------------------
+WebDriverWait wait = new WebDriverWait(driver,15);
+wait.until(ExpectedConditions.titleContains("Google"));
+wait.until(ExpectedConditions.visibilityOf(username)).sendKeys("tomsmith");
+wait.until(ExpectedConditions.elementToBeClickable(submitBtn)).click();
+
+wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loadingoverlay")));
+wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
+----------------------------------------------------------------------------------------
+Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class)
+                .ignoring(ElementClickInterceptedException.class);
+
+//button[text()='Submit']
+---------------------------------------------------------------------------------------------
+//td[text()='Steve Johns']//following-sibling::td[7]
+
