@@ -24,6 +24,8 @@ public class NewCalendarEventsTests extends AbstractTestBase {
 
     @Test
     public void defaultOptionsTest() {
+        test = report.createTest("Verify default login options");
+
         LoginPage loginPage = new LoginPage();
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
@@ -36,6 +38,8 @@ public class NewCalendarEventsTests extends AbstractTestBase {
         String actualStartDate = calendarEventsPage.getStartDate();
         String expectedStartDate = DateTimeUtilities.getCurrentDate("MMM d, yyyy");
         Assert.assertEquals(actualStartDate, expectedStartDate);
+
+        test.pass("Default options verified");
     }
 
     /**
@@ -47,6 +51,8 @@ public class NewCalendarEventsTests extends AbstractTestBase {
      */
     @Test
     public void timeDifference() {
+        test = report.createTest("Verify time difference");
+
         LoginPage loginPage = new LoginPage();
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
@@ -55,25 +61,26 @@ public class NewCalendarEventsTests extends AbstractTestBase {
         calendarEventsPage.clickToCreateCalendarEvent();
 
         // MY WAY
-//        String actualStartTime = calendarEventsPage.getStartTime().split(":")[0];
-//        int intStartTime = Integer.parseInt(actualStartTime);
-//        if (intStartTime==12){
-//            intStartTime=0;
-//        }
+        String actualStartTime = calendarEventsPage.getStartTime().split(":")[0];
+        int intStartTime = Integer.parseInt(actualStartTime);
+        if (intStartTime==12){
+            intStartTime=0;
+        }
 //        System.out.println(intStartTime);
-//        String actualEndTime = calendarEventsPage.getEndTime().split(":")[0];
-//        int intEndTime = Integer.parseInt(actualEndTime);
+        String actualEndTime = calendarEventsPage.getEndTime().split(":")[0];
+        int intEndTime = Integer.parseInt(actualEndTime);
 //        System.out.println(intEndTime);
-//        Assert.assertEquals(intEndTime,intStartTime+1);
+        Assert.assertEquals(intEndTime,intStartTime+1);
 
-        String starTime = calendarEventsPage.getStartTime();
-        String endTime = calendarEventsPage.getEndTime();
-        String format = "h:mm a"; // format 5:15 AM for example
+//        String starTime = calendarEventsPage.getStartTime(); //get start time
+//        String endTime = calendarEventsPage.getEndTime(); //get end time
+//        String format = "h:mm a"; // format 5:15 AM for example
+//
+//        long actual = DateTimeUtilities.getTimeDifference(starTime, endTime, format);
+//
+//        Assert.assertEquals(actual, 1, "Time difference is not correct");
 
-        long actual = DateTimeUtilities.getTimeDifference(starTime, endTime, format);
-
-        Assert.assertEquals(actual, 1, "Time difference is not correct");
-
+        test.pass("Time difference verified");
     }
 
     /**

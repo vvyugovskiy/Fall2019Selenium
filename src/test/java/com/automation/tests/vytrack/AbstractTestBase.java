@@ -15,7 +15,6 @@ import java.io.IOException;
 
 public abstract class AbstractTestBase {
 
-
     // will be visible in the subclass, regardless on subclass location (same package or not)
     protected WebDriverWait wait;
     protected Actions action;
@@ -25,7 +24,7 @@ public abstract class AbstractTestBase {
     protected ExtentTest test;
 
     //@Optional - to make parameter optional
-    //if you don't specify it, testng will require to specify this parameter for every test, in xml runner
+    //if you don't specify it, TESTNG will require to specify this parameter for every test, in xml runner
     @BeforeTest
     @Parameters("reportName")
 
@@ -51,7 +50,8 @@ public abstract class AbstractTestBase {
 
     @AfterTest
     public void afterTest() {
-        report.flush();//to release a report
+
+        report.flush(); //to release a report
     }
 
     @BeforeMethod
@@ -69,15 +69,14 @@ public abstract class AbstractTestBase {
         //if test failed, take a screenshot
         if (iTestResult.getStatus() == ITestResult.FAILURE) {
             // screen will have a name of the test
-            BrowserUtils.getScreenshot(iTestResult.getName());
             String screenshotPath = BrowserUtils.getScreenshot(iTestResult.getName());
             test.fail(iTestResult.getName()); // attache test name that failed
-            BrowserUtils.wait(3);
-            test.addScreenCaptureFromPath(screenshotPath);  // attach screenshot
+            BrowserUtils.wait(5);
+            test.addScreenCaptureFromPath(screenshotPath,"Failed");  // attach screenshot
             test.fail(iTestResult.getThrowable()); // attach console output
 
         }
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(5);
         Driver.closeDriver();
     }
 }
