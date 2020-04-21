@@ -14,6 +14,7 @@ public class OH_2020_03_23_Nurullah_undestandingJS {
 
     @BeforeMethod
     public void setup() {
+
         driver = DriverFactory.createDriver("chrome");
     }
 

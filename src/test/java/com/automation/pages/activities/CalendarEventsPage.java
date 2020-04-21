@@ -49,6 +49,7 @@ public class CalendarEventsPage extends AbstractPageBase {
 
     public void enterCalendarEventTitle(String titleValue) {
         BrowserUtils.waitForPageToLoad(20);
+        BrowserUtils.wait(1);
         wait.until(ExpectedConditions.visibilityOf(title)).sendKeys(titleValue);
     }
 

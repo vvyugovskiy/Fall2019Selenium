@@ -141,10 +141,10 @@ public class NewCalendarEventsTests extends AbstractTestBase {
         test.pass("Calendar event was created successfully");
     }
 
-    @DataProvider()
+    @DataProvider
     public Object[][] calendarEvents() {
         return new Object[][]{
-                {"Dayly stand-up", "Scrum meeting to provide updates"},
+                {"Daily stand-up", "Scrum meeting to provide updates"},
                 {"Sprint Review", "Scrum meeting where team discussing previous sprint"},
                 {"Sprint Planning", "Scrum meeting where team discussing backlog for following sprint"}
         };

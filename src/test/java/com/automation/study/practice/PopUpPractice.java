@@ -31,7 +31,7 @@ public class PopUpPractice {
         driver.findElement(By.linkText("JavaScript Alerts")).click();
         driver.findElement(By.xpath("//button[@onclick='jsAlert()']")).click();
         driver.switchTo().alert().accept();
-        String expected = "You successfuly clicked an alert";
+        String expected = "You successfully clicked an alert";
         String actual = driver.findElement(By.id("result")).getText();
         Assert.assertEquals(expected, actual, "Wrong button");
         BrowserUtils.wait(2);

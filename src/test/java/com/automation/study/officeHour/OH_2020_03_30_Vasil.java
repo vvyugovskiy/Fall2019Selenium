@@ -200,6 +200,7 @@ public class OH_2020_03_30_Vasil {
         Assert.assertEquals(actualPrice, expectedPrice);
         driver.quit();
     }
+
     //close browser if fails
 //        static {
 //            Runtime.getRuntime().addShutdownHook(new Thread(Driver::closeDriver));

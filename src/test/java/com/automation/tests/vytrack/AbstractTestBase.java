@@ -3,6 +3,7 @@ package com.automation.tests.vytrack;
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.ConfigurationReader;
 import com.automation.utilities.Driver;
+import com.automation.utilities.ExcelUtil;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -22,6 +23,10 @@ public abstract class AbstractTestBase {
     protected ExtentReports report;
     protected ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
+
+    protected static int row = 1;
+    protected ExcelUtil excelUtil;
+
 
     //@Optional - to make parameter optional
     //if you don't specify it, TESTNG will require to specify this parameter for every test, in xml runner
@@ -67,16 +72,21 @@ public abstract class AbstractTestBase {
     public void teardown(ITestResult iTestResult) throws IOException {
         //ITestResult class describes the result of a test.
         //if test failed, take a screenshot
+        //no failure - no screenshot
         if (iTestResult.getStatus() == ITestResult.FAILURE) {
-            // screen will have a name of the test
+            //screenshot will have a name of the test
             String screenshotPath = BrowserUtils.getScreenshot(iTestResult.getName());
-            test.fail(iTestResult.getName()); // attache test name that failed
-            BrowserUtils.wait(5);
-            test.addScreenCaptureFromPath(screenshotPath,"Failed");  // attach screenshot
-            test.fail(iTestResult.getThrowable()); // attach console output
-
+            test.fail(iTestResult.getName());//attach test name that failed
+            BrowserUtils.wait(2);
+            test.addScreenCaptureFromPath(screenshotPath, "Failed");//attach screenshot
+            test.fail(iTestResult.getThrowable());//attach console output
+            //if excelUtil object was created
+            //set value if result column to failed
+            if (excelUtil != null) {
+                excelUtil.setCellData("FAILED", "result", row++);
+            }
         }
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(2);
         Driver.closeDriver();
     }
 }

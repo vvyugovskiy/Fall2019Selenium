@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Friday Tests">
+    <test name="Testing on a Friday" parallel="classes" thread-count="2">
+        <classes>
+            <class name="com.automation.study.officeHour.OH_2020_04_06_Nurullah_WebTables"/>
+        </classes>
+    </test>
+
+    <test name="JavaScriptExecutor Test">
+        <classes>
+            <class name="com.automation.study.officeHour.OH_2020_03_23_Nurullah_undestandingJS"/>
+        </classes>
+    </test>
+</suite>
